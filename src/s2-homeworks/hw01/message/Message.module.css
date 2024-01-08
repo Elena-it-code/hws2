@@ -18,17 +18,12 @@
 .imageAndText img {
     position: absolute;
     width: 48px;
-    height: 48px;
     left: 570px;
     top: 10px;
 }
 
 .text {
-    position: absolute;
-    width: 489px;
-    min-height: 20px;
-    line-break: auto;
-    padding-left:10px;
+    position: relative;
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
@@ -36,18 +31,12 @@
 }
 
 .text:after {
-    position: absolute;
-    /*text-align: justify;*/
-    word-break: break-word;
-    /*position: fixed;*/
-
+    text-align: right;
 }
 
 .name {
     position: relative;
-    width: 40px;
-    height: 22px;
-    left: 510px;
+    left: 525px;
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 600;
@@ -55,7 +44,14 @@
     color: #ffffff;
 }
 
+/*переброс строки на вовую строку в поле сообщения*/
 .messageText {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        /*white-space: -pre-wrap;*/
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    margin-left: 10px;
 
 }
 
