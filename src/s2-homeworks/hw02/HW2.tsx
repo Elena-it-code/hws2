@@ -46,7 +46,7 @@ export const filterAffairs = (affairs: AffairType [], filter: FilterType) : Affa
     } else if (filter === 'middle') {
         return affairs.filter(el=> (el.priority === filter))
     } else {
-        return affairs
+        return []
         // TS2366: Function lacks ending return statement and return type does not include 'undefined'
         // Ожидается, что функция вернет массив AffairType [], но текущая реализация не включает явный оператор возврата во все возможные пути кода.
         // Чтобы это исправить, нам нужно добавить в конце функции оператор возврата по умолчанию, чтобы охватить случаи, когда параметр filter не соответствует ни одному из определенных случаев.

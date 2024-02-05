@@ -12,16 +12,16 @@ type AffairsPropsType = {
 
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
-        props.setFilter('all')
+        {props.setFilter('all')}
     }
     const setHigh = () => {
-        props.setFilter('high')
+        {props.setFilter('high')}
     }
     const setMiddle = () => {
-        props.setFilter('middle')
+        {props.setFilter('middle')}
     }
     const setLow = () => {
-        props.setFilter('low')
+        {props.setFilter('low')}
     }
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
@@ -33,7 +33,7 @@ function Affairs(props: AffairsPropsType) {
         <Affair
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
-            deleteAffairCallback={props.deleteAffairCallback}
+            deleteAffairCallback={()=>props.deleteAffairCallback(a._id)}
         />
     ))
 
