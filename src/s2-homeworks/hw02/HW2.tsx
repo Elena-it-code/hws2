@@ -6,7 +6,7 @@ import s2 from '../../s1-main/App.module.css'
 /*
 * 1 - описать типы AffairPriorityType, AffairType +
 * 2 - указать нужный тип для defaultAffairs +
-* 3 - дописать типы и логику функции filterAffairs и проверить её тестами  + ---
+* 3 - дописать типы и логику функции filterAffairs и проверить её тестами  +
 * 4 - выполнить пункт 3 для функции deleteAffair +
 * 5 - указать нужный тип в useState с affairs +
 * 6 - дописать тип и логику функции deleteAffairCallback +
@@ -37,7 +37,9 @@ const defaultAffairs: AffairType []  = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: AffairType [], filter: FilterType) : AffairType []  => { // need to fix any
-    if (filter === 'all') {
+    return filter === 'all' ? affairs : affairs.filter(el => el.priority === filter)
+    //запись через операторы if / else
+    /*if (filter === 'all') {
         return affairs
     } else if (filter === 'high') {
         return affairs.filter(el=> (el.priority === filter))
@@ -52,7 +54,7 @@ export const filterAffairs = (affairs: AffairType [], filter: FilterType) : Affa
         // Чтобы это исправить, нам нужно добавить в конце функции оператор возврата по умолчанию, чтобы охватить случаи, когда параметр filter не соответствует ни одному из определенных случаев.
         // Мы можем либо вернуть пустой массив [] (return []), либо выдать ошибку, в зависимости от требований нашего приложения.
         // Такое написание функции гарантирует, что функция всегда возвращает массив AffairType [] и обрабатывает случаи, когда filter значение не является одним из определенных параметров.
-    }
+    }*/
 }
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
     return affairs.filter(el =>el._id !== _id)
@@ -66,7 +68,7 @@ function HW2() {
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => { // need to fix any
         const delAffair = affairs.filter(el=> el._id !== _id)
-        setAffairs([...delAffair])
+        setAffairs(delAffair)
         //delete affairs[_id]
     }
 

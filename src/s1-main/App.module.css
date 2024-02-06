@@ -1,5 +1,36 @@
 .App {
     --header_height: 60px;
+}
+
+.hw {
+    min-height: 336px;
+
+    padding: 32px 70px;
+
+    border: 1px solid #d9d9d9;
+    border-left: none;
+    border-right: none;
+}
+
+.hwTitle {
+    padding-left: 70px;
+
+    margin-bottom: 10px;
+    margin-top: 47px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+
+
+
+
+/*
+.App {
+    --header_height: 60px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -21,4 +52,4 @@
     font-weight: 600;
     line-height: 88px;
     text-align: left;
-}
+}*/
