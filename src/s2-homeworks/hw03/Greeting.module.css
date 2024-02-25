@@ -1,35 +1,147 @@
 .greetingForm {
+    width: 372px;
+    height: 36px;
+    top: 1024px;
+    left: 70px;
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    /*border: 1px solid #D9D9D9*/
 }
 
 .error {
+    width: 372px;
+    margin: 5px;
+    /*border: 1px solid #cc0000;*/
+    color: #cc0000;
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    top: 1024px;
+    left: 70px;
+
+    border: 1px solid #D9D9D9;
+
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 10px;
 }
 
 .input:focus {
+    width: 372px;
+    height: 36px;
+    top: 224px;
+    left: 70px;
+
+    border: 1px solid #D9D9D9
 }
 
 .errorInput {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    /*border: 1px;*/
+    border: 1px solid #CC0000
 }
 
 .button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #FFFFFF;
+
+    width: 78px;
+    height: 36px;
+    top: 224px;
+    left: 454px;
+    padding: 5px 24px 5px 24px;
+    border-radius: 3px;
+    gap: 10px;
+    background: #0066CC;
+    border: 1px solid #0066CC
 }
 
 .button:focus {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #FFFFFF;
+
+    width: 78px;
+    height: 36px;
+    top: 224px;
+    left: 454px;
+    padding: 5px 24px 5px 24px;
+    border-radius: 3px;
+    gap: 10px;
+    /*background: #0066CC;*/
+    border: 1px solid #0066CC
 }
 
 .button:active {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #FFFFFF;
+
+    width: 78px;
+    height: 36px;
+    top: 224px;
+    left: 454px;
+    padding: 5px 24px 5px 24px;
+    border-radius: 3px;
+    gap: 10px;
+    background: #0066CC;
+    border: 1px solid #0066CC
 }
 
 .button:disabled {
+    width: 78px;
+    height: 36px;
+    top: 1024px;
+    left: 454px;
+    padding: 5px 24px 5px 24px;
+    border-radius: 3px;
+    gap: 10px;
+    opacity: 50%;
+    border: 1px solid #0066CC
 }
 
 .text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: left;
+
+    width: 300px;
+    height: 17px;
+    top: 198px;
+    left: 70px;
+    margin-bottom: 10px;
+
+    opacity: 50%;
 }
 
 .greeting {
+
+    width: 300px;
+    height: 17px;
+    top: 270px;
+    left: 70px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+    margin-top: 5px;
 }
