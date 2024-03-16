@@ -26,10 +26,29 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // задачка на написание онченджа
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => { // задачка на написание onChange
+        const checked = e.currentTarget.checked // получаем значение отмечен ли чекбокс
 
+        // вызываем обработчики onChange и onChangeChecked, если они определены
+        if (onChange) {
+            onChange(e); // передаем событие в качестве аргумента функции onChange
+        }
+        if (onChangeChecked) {
+            onChangeChecked(checked); // передаем значение checked в функцию onChangeChecked
+        }
     }
+
+    // 1. `const checked = e.currentTarget.checked` - Здесь мы получаем значение `checked` из события `e`,
+    // которое указывает, отмечен ли чекбокс или нет.
+    // 2. Затем идет проверка на существование функции `onChange` с помощью условия `if (onChange)`.
+    // Если функция `onChange` определена, то она вызывается с передачей события `e` в качестве аргумента: `onChange(e)`.
+    // 3. После этого идет проверка на существование функции `onChangeChecked` с помощью условия `if (onChangeChecked)`.
+    // Если функция `onChangeChecked` определена, то она вызывается с передачей значения `checked` в качестве аргумента: `onChangeChecked(checked)`.
+    // Таким образом, эта функция `onChangeCallback` предназначена для обработки события изменения чекбокса.
+    // Она вызывает соответствующие обработчики, если они были переданы в качестве аргументов, и
+    // передает им информацию о том, был ли чекбокс отмечен или снят.
+
+
 
     const finalInputClassName = s.checkbox
         + (className ? ' ' + className : '')

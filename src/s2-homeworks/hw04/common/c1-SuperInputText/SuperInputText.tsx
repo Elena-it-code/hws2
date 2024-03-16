@@ -48,11 +48,31 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onEnter() // то вызвать его
     }
 
-    const finalSpanClassName = s.error
+    /*const finalSpanClassName = s.error
         + (spanClassName ? ' ' + spanClassName : '')
     const finalInputClassName = s.input
         + (error ? ' ' + s.errorInput : ' ' + s.superInput)
-        + (className ? ' ' + className : '') // задача на смешивание классов
+        + (className ? ' ' + className : '') // задача на смешивание классов*/
+
+    const finalSpanClassName = s.error
+        + (spanClassName ? `${spanClassName}` + spanClassName : '')
+    const finalInputClassName = s.input
+        + (error ? ` ${s.errorInput}` : ` ${s.superInput}`)
+        + (className ? ` ${className}` : ''); // задача на смешивание классов
+
+    /*
+    1. В первой строке переменная `finalSpanClassName` формируется путем конкатенации строки `s.error` и,
+    если `spanClassName` определен, строки с пробелом, за которой следует значение `spanClassName`.
+    Выражение `(spanClassName ? ` ${spanClassName}` : '')` представляет собой условное выражение, которое проверяет,
+    определено ли значение `spanClassName`. Если оно определено, мы добавляем его в строку с пробелом,
+    если нет - добавляем пустую строку
+    2. Во второй строке переменная `finalInputClassName` формируется аналогично. Первым шагом добавляется
+    значение `s.input`. Затем в зависимости от условия `error` через тернарный оператор добавляется
+    `s.errorInput` или `s.superInput`, опять же, с пробелом перед каждым из этих классов. Затем, если
+    определено значение `className`, оно добавляется с пробелом на конце.<br/><br/>Итак, в обоих случаях
+    мы формируем строки классов с использованием тернарного оператора для условного добавления классов и
+    пробелов между ними.
+    */
 
     return (
         <div className={s.inputWrapper}>

@@ -2,19 +2,60 @@
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    top: 1461px;
+    left: 70px;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
 }
 
 .inputWrapper {
+
 }
 
 .superInput {
+
 }
 
 .errorInput {
+    width: 372px;
+    height: 36px;
+
+    border: 1px solid #CC1439;
+    border-radius: 5px;
+
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    text-align: left;
+
 }
 
 .errorInput:focus {
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
 }
 
 .error {
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #CC1439;
+    text-align: left;
+
+    width: 25px;
+    height: 12px;
+    top: 1475px;
+    left: 0;
+    margin-left: 70px;
+
+    display: block;
+    padding: 5px;
+
+
+
 }

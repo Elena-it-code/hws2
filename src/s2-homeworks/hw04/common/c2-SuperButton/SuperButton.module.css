@@ -1,36 +1,93 @@
 .button {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+
+    width: 132px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+    border-radius: 3px;
+
+
+    /*border: 1px solid cadetblue;
+    background: cadetblue;*/
 }
 
 .disabled {
+    color: #002E5C;
+    opacity: 50%;
+    border: 1px solid #004D99;
+    background: #004D99;
+
 }
 
 .secondary {
+    color: #0066CC;
+    border: 1px solid #0066CC;
+    background: #FFFFFF;
+
 }
 
 .default {
+    border: 1px solid #0066CC;
+    background: #0066CC;
 }
 
 .red {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+
+    width: 132px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    gap: 10px;
+
+
+    border: 1px solid #CC1439;
+    background: #CC1439;
 }
 
 .default:hover {
+    border: 1px solid #0080FF;
+    background: #0080FF;
 }
 
 .red:hover {
+    border: 1px solid #FF1A47;
+    background: #FF1A47;
+
 }
 
 .secondary:hover {
+    background: #E5F0FA;
 }
 
 
 .default:active {
+    border: 1px solid #0059B2;
+    background: #0059B2;
 }
 
 .secondary:active {
+    border: 1px solid #0066CC;
+    background: #C9E5FF;
 }
 
 .red:active {
+    border: 1px solid #B21232;
+    background: #B21232;
 }
 
 .button:disabled {
+    border: 1px solid #004D99;
+    background: #004D99;
+    opacity: 50%;
 }
