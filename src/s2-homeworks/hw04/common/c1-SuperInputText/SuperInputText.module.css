@@ -1,4 +1,5 @@
 .input:focus {
+    outline: none;
 }
 
 .input {

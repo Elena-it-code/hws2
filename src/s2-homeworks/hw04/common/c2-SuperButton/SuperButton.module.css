@@ -1,3 +1,13 @@
+/*добавление анимации к кнопке*/
+/*@keyframes blink {
+    0% {
+        left: -130%;
+    }
+    100% {
+        left: 130%;
+    }
+}*/
+
 .button {
     font-family: Montserrat;
     font-size: 14px;
@@ -17,6 +27,11 @@
     background: cadetblue;*/
 }
 
+/*добавление анимации к кнопке*/
+/*.button:hover::after {
+    animation: blink 0.35s ease;
+}*/
+
 .disabled {
     color: #002E5C;
     opacity: 50%;
@@ -35,6 +50,7 @@
 .default {
     border: 1px solid #0066CC;
     background: #0066CC;
+    outline: none;
 }
 
 .red {

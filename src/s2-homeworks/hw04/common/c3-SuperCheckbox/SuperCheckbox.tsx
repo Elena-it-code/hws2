@@ -29,13 +29,16 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => { // задачка на написание onChange
         const checked = e.currentTarget.checked // получаем значение отмечен ли чекбокс
 
-        // вызываем обработчики onChange и onChangeChecked, если они определены
-        if (onChange) {
+        onChange && onChange(e)
+        onChangeChecked && onChangeChecked(e.currentTarget.checked)
+
+        // 2 ВАРИАНТ ЗАПИСИ: вызываем обработчики onChange и onChangeChecked, если они определены
+        /*if (onChange) {
             onChange(e); // передаем событие в качестве аргумента функции onChange
         }
         if (onChangeChecked) {
             onChangeChecked(checked); // передаем значение checked в функцию onChangeChecked
-        }
+        }*/
     }
 
     // 1. `const checked = e.currentTarget.checked` - Здесь мы получаем значение `checked` из события `e`,
