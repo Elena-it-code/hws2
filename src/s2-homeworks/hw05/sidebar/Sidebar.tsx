@@ -23,6 +23,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         src={closeIcon}
                         alt="close sidebar"
                         id={'hw5-menu-close'}
+
                     />
                 </button>
 
@@ -31,6 +32,10 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
+                        //className={open ? `${s.nav} ${sidebarClass}` : `${s.close}`}
+                        className={open ? `${s.nav}` + `${s.background}` : `${s.close}`}
+                        //className={s.active ? s.background : s.close}
+                        // className={s.active ? ` ${s.close} ${s.background}` : `${s.close}`}
                         // className={...} // делает студент
                     >
                         Pre-junior
@@ -39,6 +44,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
+                        //className={open ? `${s.nav} ${sidebarClass}` : `${s.close}`}
+                        className={open ? `${s.nav}` + `${s.background}` : `${s.close}`}
                         // className={...} // делает студент
                     >
                         Junior
@@ -47,6 +54,8 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
+                        // className={open ? `${s.nav} ${sidebarClass}` : `${s.close}`}
+                        className={open ? `${s.nav}` + `${s.background}` : `${s.close}`}
                         // className={...} // делает студент
                     >
                         Junior Plus

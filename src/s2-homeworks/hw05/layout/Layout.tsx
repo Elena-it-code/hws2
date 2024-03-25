@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react'
 import { Header } from '../header/Header'
 import { Sidebar } from '../sidebar/Sidebar'
+import Pages from "../Pages";
 
 type PropsType = {
     children: ReactNode
