@@ -1,11 +1,24 @@
 .spanBlock {
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .span {
+    color: #0080FF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: left;
+
+
 }
 
 .input {
+    margin-top: 50px;
+
 }
 
 .pen {
+    margin-right: 15px;
 }
