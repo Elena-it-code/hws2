@@ -1,15 +1,28 @@
 .radio {
+    /*display: inline-block;*/
+    width: 24px;
+    height: 24px;
+    top: 241px;
+    left: 358px;
+    padding: 2px 0px 0px 0px;
+
+
+    color: #000000;
 }
 
 .radio::before {
+
 }
 
 
 .radio:checked::before {
+
 }
 
 .label {
+
 }
 
 .options {
+
 }
