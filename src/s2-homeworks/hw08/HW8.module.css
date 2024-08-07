@@ -1,23 +1,79 @@
 .item {
+    height: 36px;
+    top: 248px;
+    left: 70px;
+    gap: 0px;
 }
 
 .item:last-of-type {
+
 }
 
 .users {
+    /*width: 30px;*/
+    height: 16px;
+    top: 300px;
+    left: 87px;
+    /*gap: 0px;*/
+    color: #000000;
 }
 
 .buttonsContainer {
+    /*border: 2px solid #1100ff;*/
+    margin-left: 210px;
+
 }
 
 .container {
+    /*border: 1px solid #cc0000;*/
+    width: 620px;
+
 }
 
+/*строка name Age*/
 .thead {
+    /*border: 1px solid #cc0000;*/
+    background: #E5E5E5;
+   /* border-bottom-color: #d9d9d9;*/
+    display: flex;
+    justify-content: space-between;
+    width: 605px;
+   /* font-weight: 600;*/
+
 }
 
 .nameCol {
+    width: 260px;
+    height: 16px;
+    top: 300px;
+    /*left: 87px;*/
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.41px;
+ /*   text-align: left;*/
+
+
+    /*border: 1px solid #cc0000;*/
 }
 
 .ageCol {
+    width: 20px;
+    height: 40px;
+    top: 348px;
+
+   /* margin-left: -100px;*/
+    /*display: flex;
+    justify-content: space-between;*/
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.41px;
+    /*text-align: right;*/
+    background: #E5E5E5;
+    /*border: 6px solid rgba(255, 51, 0, 0.13);*/
+
+
 }
