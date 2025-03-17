@@ -1,30 +1,16 @@
-#hw11-single-slider,
-#hw11-double-slider {
-    width: 100%; /* Слайдеры занимают всю ширину контейнера */
-}
-
 .container {
-    width: 300px; /* Ширина контейнера */
 }
 
 .wrapper {
-    display: flex; /* Делаем flex-контейнер */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-    margin-bottom: 20px; /* Отступ между блоками */
-}
-
-/* Полоска слайдера */
-.wrapper .slider {
-    flex-grow: 1; /* Полоска занимает всё доступное пространство */
-    margin: 0 10px; /* Отступы от цифр */
+    width: 30vw;
+    display: flex;
+    gap: 20px;
 }
 
 .number {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
+    font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: rgba(0, 0, 0, 1);
-    min-width: 40px; /* Минимальная ширина для цифр, чтобы они не сжимались */
-    text-align: center; /* Выравнивание текста по центру */
 }
