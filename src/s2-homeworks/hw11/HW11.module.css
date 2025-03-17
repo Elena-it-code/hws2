@@ -1,8 +1,25 @@
 .container {
+    width: 300px; /* Ширина контейнера */
+    /*padding: 20px; !* Отступы внутри контейнера *!*/
 }
 
 .wrapper {
+    display: flex; /* Делаем flex-контейнер */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    margin-bottom: 20px; /* Отступ между блоками */
+}
+.wrapper span:not(:first-child) {
+    margin-right: 20px; /* Отступ для всех элементов, кроме первого (для цифры 100) */
 }
 
 .number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 1);
+    min-width: 40px; /* Минимальная ширина для цифр, чтобы они не сжимались */
+    text-align: center; /* Выравнивание текста по центру */
 }
+
