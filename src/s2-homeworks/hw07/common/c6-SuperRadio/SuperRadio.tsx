@@ -36,8 +36,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         const actualChecked = e.currentTarget.value
+        console.log(typeof actualChecked)
         if (onChangeOption) {
-            onChangeOption(actualChecked)
+            onChangeOption(Number(actualChecked))
         }
         // делают студенты +++
     }

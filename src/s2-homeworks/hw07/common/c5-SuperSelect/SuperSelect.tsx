@@ -38,7 +38,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         const actualSelectValue = e.currentTarget.value; // достаем значение value, текущее то, что введено и записано в select "с задней стороны", но пока не отображается для UI
         if (onChangeOption) {
-            onChangeOption(actualSelectValue)
+            onChangeOption(Number(actualSelectValue))
         } // делают студенты +++
 
     }
