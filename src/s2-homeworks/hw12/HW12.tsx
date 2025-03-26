@@ -14,24 +14,23 @@ import {AppStoreType} from "../hw10/bll/store";
 * */
 
 const themes = [
-    { id: '1', value: 'light' }, // изменила id как строки
-    { id: '2', value: 'blue' },
-    { id: '3', value: 'dark' },
-]
+    { id: 1, value: 'light' },
+    { id: 2, value: 'blue' },
+    { id: 3, value: 'dark' },
+];
 
 const HW12 = () => {
     // взять ид темы из редакса
-    const themeId = useSelector((state: AppStoreType) => state.theme.themeId)
+    const themeId = useSelector<AppStoreType, number>((state) => state.theme.themeId);
     const dispatch = useDispatch()
 
-    const change = (id: string) => { // принимает строку
-        dispatch(changeThemeId(id)); // передаём строку
+    const change = (id: number) => {
+        dispatch(changeThemeId(id));
     };
 
     useEffect(() => {
-        // document.documentElement.dataset.theme = themeId + ''
-        document.documentElement.dataset.theme = themeId; // уже строка, преобразование не нужно
-    }, [themeId])
+        document.documentElement.dataset.theme = String(themeId);
+    }, [themeId]);
 
     return (
         <div id={'hw12'}>
@@ -43,10 +42,8 @@ const HW12 = () => {
                     id={'hw12-select-theme'}
                     className={s.select}
                     // сделать переключение тем
-                    //value={themeId}
-                    value={themeId} // строка
-                    options={themes}
                     onChangeOption={change}
+                    options={themes}
                 />
             </div>
         </div>
