@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [disabledButton, setDisabledButton] = useState(false);
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -30,6 +31,7 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setDisabledButton(true)
 
         axios
             .post(url, {success: x})
@@ -37,29 +39,35 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data.errorText + " " + res.data.info)
-                setInfo('')
+                setText(res.data.errorText)
+                setInfo(res.data.info)
             })
             .catch((e) => {
                 // дописать
-                if (x === false) {
-                    setCode('Ошибка 500!')
-                    setImage(error500)
-                    setText(e.response.data.errorText + " " + e.response.data.info)
-                    setInfo('')
-                }
-                if (x === undefined) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                    setText(e.response.data.errorText + " " + e.response.data.info)
-                    setInfo('')
-                } else if (x === null) {
-                    setCode('Error!')
-                    setImage(errorUnknown)
-                    setText(`Network Error\n AxiosError`);
-                    setInfo('')
-                }
+                setText(e.response?.data?.errorText || e.message)
+                setInfo(e.response?.data?.info || e.name)
 
+                switch (e.response?.status) {
+                    case 400: {
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                        break
+                    }
+                    case 500: {
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                        break
+                    }
+                    default: {
+                        setCode('Error!')
+                        setImage(errorUnknown)
+                    }
+                }
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setDisabledButton(false)
+                }, 1000)
             })
     }
 
@@ -74,8 +82,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-                        disabled={info === '' ? false : true}
-
+                        disabled={disabledButton}
                     >
                         Send true
                     </SuperButton>
@@ -84,8 +91,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-                        disabled={info === '' ? false : true}
-
+                        disabled={disabledButton}
                     >
                         Send false
                     </SuperButton>
@@ -94,7 +100,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-                        disabled={info === '' ? false : true}
+                        disabled={disabledButton}
                     >
                         Send undefined
                     </SuperButton>
@@ -103,7 +109,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-                        disabled={info === '' ? false : true}
+                        disabled={disabledButton}
                     >
                         Send null
                     </SuperButton>
