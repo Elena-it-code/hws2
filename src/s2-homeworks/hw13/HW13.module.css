@@ -1,22 +1,71 @@
+/* Контейнер для кнопок */
 .buttonsContainer {
+    white-space: nowrap; /* Запрет переноса текста */
+    padding: 12px 24px; /* Увеличиваем отступы */
+    margin-right: 30px;
+    min-width: max-content; /* Минимальная ширина по содержимому */
+    overflow: hidden; /* Скрываем выходящий текст */
+    text-overflow: ellipsis; /* ... если текст не помещается */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Основной контейнер */
 .responseContainer {
+    display: flex;
+    height: calc(100vh - 100px); /* Высота минус место для кнопок */
 }
 
+/* Левая половина с картинкой */
 .imageContainer {
+    flex: 0 0 50%; /* Фиксированные 50% ширины */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Стили для картинки */
 .image {
+    width: 100%;
+    height: 100%;
+    max-height: 70vh;
+    object-fit: contain;
 }
 
-.textContainer{
+/* Правая половина с текстом */
+.textContainer {
+    flex: 0 0 50%; /* Фиксированные 50% ширины */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    padding: 40px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Вертикальное центрирование */
+    align-items: flex-start; /* Текст начинается слева */
 }
 
+/* Стили для текстовых элементов */
 .code {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 20px;
 }
 
 .text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
+
 .info {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
 }
+
