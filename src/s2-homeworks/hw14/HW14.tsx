@@ -34,22 +34,31 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                // делает студент
-
                 // сохранить пришедшие данные
-
-                //
+                if (res?.data) {
+                    setTechs(res.data.techs);
+                }
             })
+            .catch((e) => {
+                alert(e.response?.data?.errorText || e.message)
+            })
+            .finally(() => setLoading(false)) // ✅ убираем крутилку -->  '...ищем'
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
-        // делает студент
-
         // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
+        // Создаем новый объект параметров на основе текущих
+        // URLSearchParams - это нативный API для работы с query-параметрами
+        const newSearchParams = new URLSearchParams(searchParams);
+        // Устанавливаем или обновляем параметр 'search'
+        if (value) {
+            newSearchParams.set('search', value); // добавляет или заменяет параметр
+        } else {
+            newSearchParams.delete('search'); // удаляет параметр, если значение пустое
+        }
+        // Обновляем URL без перезагрузки страницы
+        setSearchParams(newSearchParams);
     }
 
     useEffect(() => {
